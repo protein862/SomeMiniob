@@ -322,6 +322,7 @@ int CliServer::serve()
   RC rc = communicator.init(STDIN_FILENO, make_unique<Session>(Session::default_session()), "stdin");
   if (OB_FAIL(rc)) {
     LOG_WARN("failed to init cli communicator. rc=%s", strrc(rc));
+   
     return -1;
   }
 
